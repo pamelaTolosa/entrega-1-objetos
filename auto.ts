@@ -2,6 +2,7 @@
 Agregar métodos (constructor(), acelerar(), frenar()).
 Instanciar objetos y probar métodos*/
 
+import * as rs from "readline-sync";
 export class Auto{
     marca: string;
     modelo: string;
@@ -14,14 +15,21 @@ export class Auto{
         this.anio= pAnio;
     }
 
-    acelerar(paumentoVel: number): string {
-        this.velocidad += paumentoVel;
-        return `Ha acelerado y ahora va a ${this.velocidad} km/h`;
+    acelerar(): void {
+        let incremento: number =0;
+        while (incremento<=0) {
+            incremento= rs.questionInt ("Ingrese velocidad mayor a cero: ")
+            
+        }
+        this.velocidad += incremento;
+        console.log(`Ha acelerado y ahora va a ${this.velocidad} km/h`);
+         
     }
 
-    frenar(): string {
+
+    frenar(): void {
         this.velocidad = 0;
-        return `Ha frenado y está detenido.`;
+        console.log(`Ha frenado y está detenido.`);
 
 
     }
